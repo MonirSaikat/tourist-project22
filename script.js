@@ -30,3 +30,10 @@ function slidesLeft() {
 nextBtn.addEventListener('click', slidesRight);
 prevBtn.addEventListener('click', slidesLeft);
 
+// key events
+function handleKeyDown(e) {
+  if (e.key == 'ArrowLeft') slidesLeft();
+  else if (e.key == 'ArrowRight') slidesRight();
+}
+
+window.addEventListener('keydown', handleKeyDown, false);
