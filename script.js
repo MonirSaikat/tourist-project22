@@ -1,8 +1,9 @@
-const nextBtn = document.querySelector('.next-btn');
-const prevBtn = document.querySelector('.prev-btn');
-const slides = document.querySelectorAll('.slide');
+const nextBtn        = document.querySelector('.next-btn');
+const prevBtn        = document.querySelector('.prev-btn');
+const slides         = document.querySelectorAll('.slide');
 const numberOfSlides = slides.length;
-let slideNumber = 0;
+let   slideNumber    = 0;
+let   autoPlay       = true;
 
 function slidesRight() {
   slides.forEach(slide => {
@@ -37,3 +38,9 @@ function handleKeyDown(e) {
 }
 
 window.addEventListener('keydown', handleKeyDown, false);
+
+// autoplay
+if (typeof autoPlay !== 'undefined' && autoPlay) {
+  const autoPlayTime = 3;
+  setInterval(slidesRight, autoPlayTime * 1000)
+}
