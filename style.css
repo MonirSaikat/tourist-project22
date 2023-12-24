@@ -1,14 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --clr-white: #fff;
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-darker: hsl(0, 0%, 27%);
+  --ff-montserrat: "Montserrat", sans-serif;
+  --clr-dark-overlay: rgba(0, 0, 0, 0.4);
+  --banner-title-font: 1000%;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--ff-montserrat);
 }
 
 img {
@@ -28,7 +32,7 @@ img {
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 1.875rem;
   color: var(--clr-white);
   text-decoration: none;
   font-weight: 700;
@@ -42,8 +46,8 @@ img {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   background: transparent;
   border: 2px solid var(--clr-white);
   border-radius: 6px;
@@ -57,22 +61,31 @@ img {
 }
 
 .social-media a i {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--clr-white);
   transition: 0.5s;
 }
 
 .social-media a:hover i {
-  color: #444;
+  color: var(--clr-darker);
 }
 
 .navbar a {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--clr-white);
   text-decoration: none;
   font-weight: 500;
-  margin-left: 30px;
+  margin-left: 1.875rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav-btn {
+  font-size: 4rem;
+  color: var(--clr-white);
+  position: absolute;
+  right: 5%;
+  top: 30%;
+  display: none;
 }
 
 .banner {
@@ -117,6 +130,7 @@ img {
   transform: translateX(0);
   z-index: 1;
   transition: 0.5s ease;
+  background: var(--clr-dark-overlay);
 }
 
 .left-intro .penetrte-blur {
@@ -135,7 +149,7 @@ img {
 }
 
 .penetrte-blur h1 {
-  font-size: 250px;
+  font-size: var(--banner-title-font);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
@@ -147,23 +161,23 @@ img {
 }
 
 .content h3 {
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 
 .content p {
-  font-size: 16px;
-  margin: 10px 0 15px;
+  font-size: 1rem;
+  margin: 0.625rem 0 0.9375rem;
 }
 
 .content .btn {
   display: inline-block;
-  padding: 13px 28px;
+  padding: 0.8125rem 1.8rem;
   background: var(--clr-white);
   border: 2px solid var(--clr-white);
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  color: #444;
+  color: var(--clr-darker);
   font-weight: 600;
   transition: 0.5s;
 }
@@ -188,10 +202,11 @@ img {
   transform: translateX(0);
   z-index: 1;
   transition: 0.5s ease;
+  background: var(--clr-dark-overlay);
 }
 
 .right-info h1 {
-  font-size: 250px;
+  font-size: var(--banner-title-font);
   color: var(--clr-white);
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0px 5px rgba(0, 0, 0, 0.1),
@@ -202,11 +217,11 @@ img {
 
 .right-info h3 {
   position: absolute;
-  font-size: 80px;
+  font-size: 500%;
   color: #fff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transform: translateY(150%);
-  margin-left: 13px;
+  margin-left: 0.8125rem;
 }
 
 .navigation {
@@ -220,14 +235,14 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   background: var(--clr-white);
   border: 2px solid var(--clr-white);
-  border-radius: 6px;
+  border-radius: 0.375rem;
   box-shadow: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 1.5625rem;
   transition: 0.5s;
 }
 
@@ -240,8 +255,8 @@ img {
 }
 
 .navigation span i {
-  font-size: 45px;
-  color: #444;
+  font-size: 2.8125rem;
+  color: var(--clr-darker);
   transition: 0.5s;
 }
 
@@ -250,5 +265,26 @@ img {
 }
 
 .navigation span:nth-child(1):hover i {
-  color: #444;
+  color: var(--clr-darker);
+}
+
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  html {
+    font-size: 10px;
+  }
+
+  .mobile-nav-btn {
+    display: block;
+  }
+
+  .social-media,
+  .navbar {
+    display: none;
+  }
 }

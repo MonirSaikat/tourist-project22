@@ -3,7 +3,7 @@ const prevBtn        = document.querySelector('.prev-btn');
 const slides         = document.querySelectorAll('.slide');
 const numberOfSlides = slides.length;
 let   slideNumber    = 0;
-let   autoPlay       = true;
+let   autoPlay       = false;
 
 function slidesRight() {
   slides.forEach(slide => {
